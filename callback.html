@@ -1,0 +1,8 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>rnes – TikTok authorization</title><style>body{font-family:-apple-system,Segoe UI,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.6;color:#222}h1{font-size:28px}h2{font-size:19px;margin-top:28px}code{background:#f2f2f2;padding:2px 6px;border-radius:4px;word-break:break-all}</style></head><body>
+<h1>TikTok authorization</h1><div id="out">Reading…</div>
+<script>
+const p=new URLSearchParams(location.search),o=document.getElementById('out');
+if(p.get('code')){o.innerHTML='<p>Authorization succeeded. Copy this code back into the script:</p><p><code id="c"></code></p>';document.getElementById('c').textContent=p.get('code');}
+else if(p.get('error')){o.textContent='Authorization failed: '+p.get('error')+' '+(p.get('error_description')||'');}
+else{o.textContent='No code in the URL.';}
+</script></body></html>
